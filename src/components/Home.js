@@ -1,5 +1,4 @@
 import React from "react"
-import ActivitiesPage from "./ActivitiesPage";
 
 function Home(){
 
@@ -10,7 +9,9 @@ function Home(){
 
 
         <div>
-            <ActivitiesPage />
+            <h2>
+                Welcome to the Home Page.
+            </h2>
         </div>
     )
 }

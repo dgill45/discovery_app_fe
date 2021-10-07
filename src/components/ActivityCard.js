@@ -1,7 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 
-function ActivityCard({id, activity_name, category_id}){
+function ActivityCard({id, activity_name}){
 
     return(
        
@@ -12,6 +13,9 @@ function ActivityCard({id, activity_name, category_id}){
                     <hr className ='line'></hr>
                     <h3 className ='card-text'>{activity_name}</h3>
                 </div>
+                <Link to ={`/activities/${id}`}> 
+                    <button className ="clicked">View this Activity</button>
+                </Link>
 
             </div>
 
