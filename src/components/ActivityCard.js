@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-function ActivityCard({id, activity_name}){
+function ActivityCard({id, activity_name, deleteActivity}){
 
     return(
        
@@ -16,7 +16,9 @@ function ActivityCard({id, activity_name}){
                 <Link to ={`/activities/${id}`}> 
                     <button className ="clicked">View this Activity</button>
                 </Link>
-
+                <Link to = {`/activities/${id}`}>
+                        <button className = "clicked" onClick = {deleteActivity}> Delete this Activity!</button>
+                </Link>
             </div>
 
     )

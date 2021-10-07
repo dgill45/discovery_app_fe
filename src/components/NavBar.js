@@ -5,8 +5,8 @@ function NavBar(){
 
 
     return(
-        <nav className = 'navbar'>
-            <header className="jumbotron">
+        <div className = 'navbar-container'>
+            <nav className = 'navbar'>
                 <div className= "nav-link-container">
                     <div className = "nav-link">
                         <NavLink exact to ="/">Home</NavLink>
@@ -29,9 +29,8 @@ function NavBar(){
                         <NavLink to ="/activities">Activities</NavLink>
                     </div>
                 </div>
-            </header>
-
-        </nav>
+            </nav>
+       </div>
     )
 }
 

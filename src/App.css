@@ -4,6 +4,7 @@
 
 .App-header {
   background-color: #282c34;
+  max-width: 1200px;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -29,8 +30,8 @@
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
-  width: 10rem;
-  height: 20rem;
+  width: 8em;
+  height: 12rem;
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 3px 4px #e04b52;
@@ -38,8 +39,8 @@
 
 .card-container {
 
-  width: 100px;
-  height: 22rem;
+  width: 50em;
+  height: 18em;
   padding: 20px;
   justify-content: center;
   flex-direction: row;
@@ -49,7 +50,24 @@
 .card-text{
   color: white;
 }
-
+a {
+  margin:0%;
+  max-height: 20px;
+}
 .clicked {
   height: 20px;
+}
+
+.panel-container{
+  margin: 20px;
+  padding-top: 30px;
+
+}
+
+.panel-body{
+  color: black;
+}
+
+.navbar-container{
+  max-width: 1200;
 }
