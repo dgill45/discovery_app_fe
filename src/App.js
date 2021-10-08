@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './components/Home'
 import ActivitiesContainer from './components/ActivitiesContainer';
 import ActivityDetails from './components/ActivityDetails';
+import EventContainer from './components/EventContainer';
 import NavBar from './components/NavBar'
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
               <Route path = "/activities">
                 <ActivitiesContainer />
               </Route>
+              <Route path = "/events">
+                <EventContainer />
+                </Route>
               <Route path = "*">
                 <h1>404 Not Found</h1>
               </Route>

@@ -83,7 +83,8 @@ function ActivitiesContainer(){
                 {showForm ? <ActivityForm 
                 createActivity={createActivity}/> : null}
                     <div className="button-container">
-                        <button onClick={handleClick}>{showForm?  "Hide new Activity form":"Add a new Activity" }</button>
+                        <button onClick={handleClick}>{showForm?
+                          "Hide new Activity form":"Add a new Activity" }</button>
                     </div>
                 
             

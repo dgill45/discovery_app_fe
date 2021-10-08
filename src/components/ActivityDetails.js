@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../constraints/index.js";
+import EventContainer from "./EventContainer.js";
 
-function ActivityDetails({activities}){
+function ActivityDetails(){
 
     const [activity, setActivity] = useState(null)
     const {id} = useParams()
@@ -21,13 +22,12 @@ function ActivityDetails({activities}){
             <div className = "panel-body">
                     <h3>{activity.activity_name}</h3>
             </div>
-                
+                <EventContainer />
                 
             </div>}
             
             <button className = 'clicked' > Edit this Activity</button>
             <button className = 'clicked' > Delete This Activity!</button>
-            {/*<Messages activity={activity}/>*/}
         </div>
     )
 }

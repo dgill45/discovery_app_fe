@@ -11,6 +11,7 @@ function NavBar(){
                     <div className = "nav-link">
                         <NavLink exact to ="/">Home</NavLink>
                     </div>
+                    
                     {/*<div>
                     {user? 
                     <div className = 'nav-link'>
@@ -27,6 +28,9 @@ function NavBar(){
                     </div>*/}
                     <div className = 'nav-link'>
                         <NavLink to ="/activities">Activities</NavLink>
+                    </div>
+                    <div>
+                        <NavLink to = "/events">Events</NavLink>
                     </div>
                 </div>
             </nav>
