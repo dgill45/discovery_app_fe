@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { BASE_URL } from "../constraints/index.js";
 import EventContainer from "./EventContainer.js";
 
-function ActivityDetails(){
+function ActivityDetails({activities}){
 
     const [activity, setActivity] = useState(null)
     const {id} = useParams()
@@ -22,7 +22,7 @@ function ActivityDetails(){
             <div className = "panel-body">
                     <h3>{activity.activity_name}</h3>
             </div>
-                <EventContainer />
+                <EventContainer activities = {activities}/>
                 
             </div>}
             
