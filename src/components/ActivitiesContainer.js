@@ -29,10 +29,9 @@ function ActivitiesContainer(){
 
     function populateActivities(){
         
-            console.log(activities);
             return activities.map((activity) => (
               <ActivityCard key={activity.id}
-                activity={activity}
+                activity_name = {activity.activity_name}
                 deleteActivity={deleteActivity} 
                 updateActivity={updateActivity}
                 />
