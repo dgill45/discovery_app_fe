@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { BASE_URL } from '../constraints';
-import ActivityCard from "./ActivityCard";
 import ActivityForm from "./ActivityForm";
+import ActivityPage from "./ActivitiesPage";
 
 function ActivitiesContainer(){
 
-    //INDEX '/activities'
+    //READ '/activities'
 
     const [activities, setActivities] = useState([])
     const [showForm, setShowForm] = useState(false)
@@ -17,7 +17,7 @@ function ActivitiesContainer(){
         
     }, [])
 
-    //CREATE 
+    //CREATE an activity
 
     function createActivity(activities) {
         fetch(BASE_URL + "activities", {
@@ -32,23 +32,12 @@ function ActivitiesContainer(){
 
     }
 
+    //Form toggler
     function handleClick() {
         setShowForm((showForm) => !showForm)
       }
 
-
-    function populateActivities(){
-        
-            return activities.map((activity) => (
-              <ActivityCard key={activity.id}
-                activity_name = {activity.activity_name}
-                deleteActivity={deleteActivity} 
-                updateActivity={updateActivity}
-                />
-            ));
-    
-    }
-
+    //EDIT Activity
     function updateActivity(activity) {
         fetch(BASE_URL + "activities/" + activity.id, {
           method: "PATCH",
@@ -66,6 +55,7 @@ function ActivitiesContainer(){
         setActivities(newActivities);
     }
 
+    //DESTROY an activity
     function deleteActivity(activity) {
         fetch(BASE_URL + "activity/" + activity.id, {
           method: "DELETE",
@@ -76,18 +66,16 @@ function ActivitiesContainer(){
 
     return(
         <div className = 'board-container'>
-            <header>All Activities Board</header>
-                <div className = 'card-container'>
-                    { activities && populateActivities()}
-                </div>
+            <ActivityPage activities = {activities}
+              updateActivity = {updateActivity}
+              deleteActivity = {deleteActivity}
+                  />
                 {showForm ? <ActivityForm 
                 createActivity={createActivity}/> : null}
                     <div className="button-container">
                         <button onClick={handleClick}>{showForm?
                           "Hide new Activity form":"Add a new Activity" }</button>
                     </div>
-                
-            
         </div> 
     )
 

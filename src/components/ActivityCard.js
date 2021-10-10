@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-function ActivityCard({id, activity_name, deleteActivity}){
+function ActivityCard({id, activity_name, deleteActivity, updateActivity}){
 
     return(
        

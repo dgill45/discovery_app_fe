@@ -7,6 +7,7 @@ function ActivityDetails({activities}){
 
     const [activity, setActivity] = useState(null)
     const {id} = useParams()
+    console.log(id)
 
     // Show a particular activity 
     useEffect(() =>{
@@ -20,14 +21,14 @@ function ActivityDetails({activities}){
         <div className = 'panel-container'>
             {activity && <div className = "panel">
             <div className = "panel-body">
-                    <h3>{activity.activity_name}</h3>
+                    <h3>{activities.activity_name}</h3>
             </div>
-                <EventContainer activities = {activities}/>
+                <EventContainer />
                 
             </div>}
             
-            <button className = 'clicked' > Edit this Activity</button>
-            <button className = 'clicked' > Delete This Activity!</button>
+            <button className = 'clicked'> Edit this Activity</button>
+            <button className = 'clicked'> Delete This Activity!</button>
         </div>
     )
 }

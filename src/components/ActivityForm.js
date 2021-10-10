@@ -9,7 +9,7 @@ function EventForm({activities, createActivity}){
     function handleChange(event) {
 
         setNewActivity({
-          ...activities,
+                ...newActivity,
           [event.target.name]: event.target.value,
         });
       }
