@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { BASE_URL } from '../constraints';
 import ActivityForm from "./ActivityForm";
-import ActivityPage from "./ActivitiesPage";
+import ActivityCard from "./ActivityCard";
 
 function ActivitiesContainer(){
 
@@ -17,6 +17,17 @@ function ActivitiesContainer(){
         
     }, [])
 
+
+    function populateActivities(){
+        
+      return activities.map((activity, idx) => (
+        <ActivityCard key={activity.id}
+          activity = {activity}
+          deleteActivity={deleteActivity} 
+          updateActivity={updateActivity}
+          />
+      ));
+    }      
     //CREATE an activity
 
     function createActivity(activities) {
@@ -65,17 +76,20 @@ function ActivitiesContainer(){
       }
 
     return(
-        <div className = 'board-container'>
-            <ActivityPage activities = {activities}
-              updateActivity = {updateActivity}
-              deleteActivity = {deleteActivity}
-                  />
-                {showForm ? <ActivityForm 
-                createActivity={createActivity}/> : null}
+        <div className = 'activities-board-container'>
+            <div className = 'activities-card-container'>
+                    { activities && populateActivities()}
+                </div>
+
+                  <div className = 'activities-form-container'>
+                    {showForm ? <ActivityForm 
+                    createActivity={createActivity}/> : null}
                     <div className="button-container">
                         <button onClick={handleClick}>{showForm?
-                          "Hide new Activity form":"Add a new Activity" }</button>
-                    </div>
+                          "Hide new Activity form":"Add a new Activity" }
+                        </button>
+                      </div>
+                  </div>
         </div> 
     )
 

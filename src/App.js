@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './components/Home'
 import ActivitiesContainer from './components/ActivitiesContainer';
@@ -8,11 +8,27 @@ import EventContainer from './components/EventContainer';
 import NavBar from './components/NavBar'
 
 function App() {
+
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  function handleLogin(user) {
+    setUser(user);
+  }
+
+  function handleLogout() {
+    setUser(null);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="display-4">Welcome to the Discovery App!</h1>
-        <p className="lead">Use your online life to live life offline.</p>
         <Router>
             <NavBar />
               <Switch>
@@ -33,6 +49,9 @@ function App() {
               </Route>
               </Switch>
         </Router>
+        <header className="App-header">
+        <h1 className="display-4">Welcome to the Discovery App!</h1>
+        <p className="lead">Use your online life to live life offline.</p>
       </header>
     </div>
   );

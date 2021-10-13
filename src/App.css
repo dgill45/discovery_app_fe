@@ -1,3 +1,10 @@
+:root {
+  --bg: #282c34;
+  --header: #fff;
+  --link: #61dafb;
+  --text: hsla(0, 0%, 100%, 0.88);
+}
+
 .App {
   text-align: center;
 }
@@ -75,4 +82,8 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.nav-link-container{
+  flex-direction: row;
 }
