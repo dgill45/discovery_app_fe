@@ -1,32 +1,17 @@
 import './App.css';
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './components/Home'
 import ActivitiesContainer from './components/ActivitiesContainer';
 import ActivityDetails from './components/ActivityDetails';
 import EventContainer from './components/EventContainer';
 import NavBar from './components/NavBar'
+import Login from './components/Login';
 
 function App() {
 
 
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
-
-  function handleLogin(user) {
-    setUser(user);
-  }
-
-  function handleLogout() {
-    setUser(null);
-  }
+ 
   return (
     <div className="App">
         <Router>
@@ -34,6 +19,9 @@ function App() {
               <Switch>
               <Route exact path= "/">
                 <Home />
+              </Route>
+              <Route path= "/login">
+                <Login />
               </Route>
               <Route path = '/activities/:id'>
                 <ActivityDetails />
@@ -43,7 +31,7 @@ function App() {
               </Route>
               <Route path = "/events">
                 <EventContainer />
-                </Route>
+              </Route>
               <Route path = "*">
                 <h1>404 Not Found</h1>
               </Route>

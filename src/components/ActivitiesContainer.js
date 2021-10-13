@@ -19,24 +19,27 @@ function ActivitiesContainer(){
 
 
     function populateActivities(){
+
         
-      return activities.map((activity, idx) => (
+       return activities.map((activity) => (
         <ActivityCard key={activity.id}
           activity = {activity}
           deleteActivity={deleteActivity} 
           updateActivity={updateActivity}
           />
       ));
+       
     }      
     //CREATE an activity
 
-    function createActivity(activities) {
+    function createActivity(activity) {
         fetch(BASE_URL + "activities", {
           method: "POST",
           headers: {
+            Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(activities),
+          body: JSON.stringify(activity),
         })
           .then((res) => res.json())
           .then((json) => setActivities([...activities, json]))
