@@ -10,7 +10,7 @@ function ActivityDetails(){
 
     // Show a particular activity 
     useEffect(() =>{
-        fetch(BASE_URL + '/activities/' + id)
+        fetch(BASE_URL + 'activities/' + id)
         .then((res) => res.json())
         .then(activity => setActivity(activity))
 
@@ -25,9 +25,10 @@ function ActivityDetails(){
         <div className = 'panel-container'>
             {activity && (
             <>
+            <h3>Activity Name: {activity.activity_name}</h3>
                 <div className = "panel">
                     <div className = "panel-body">
-                            <h3>{activity}</h3>
+                            <h3>Add an Event</h3>
                     </div>
                     
                 </div>

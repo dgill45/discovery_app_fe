@@ -55,11 +55,11 @@ function ActivityCard({activity, deleteActivity, updateActivity, initialDelay}){
 
           <form onSubmit={handleUpdate}>
             <input name="name" value={newActivity.activity_name} onChange={handleChange} />
-            <button type="submit">Update Gym</button>
+            <button type="submit">Update Activity</button>
           </form>
         </>
       )}
-                 <button onClick={toggleEdit}>Edit</button>
+                 <button className = "clicked" onClick={toggleEdit}>Edit</button>
             </div>
 
     )

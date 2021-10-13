@@ -39,8 +39,8 @@ body {
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
-  width: 8em;
-  height: 12rem;
+  width: 10rem;
+  height: 20rem;
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 3px 4px #e04b52;
@@ -49,7 +49,7 @@ body {
 .card-container {
 
   width: 50em;
-  height: 18em;
+  height: 18rem;
   padding: 20px;
   justify-content: center;
   flex-direction: row;
@@ -59,12 +59,14 @@ body {
 .card-text{
   color: white;
 }
+
 a {
   margin:0%;
-  max-height: 20px;
+  max-height: 10px;
+  color: black;
 }
 .clicked {
-  height: 20px;
+  height: 30px;
 }
 
 .panel-container{
@@ -77,19 +79,25 @@ a {
   color: black;
 }
 
-.navbar {
-max-width: 90em;
+nav.navbar {
+  width: 100%;
 }
 
 .navbar-container{
-  max-width: 1200;
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  padding: 0;
-  margin: auto;
+  padding: 10px;
+  margin: auto 10px;
 }
 
 .nav-link-container{
   flex-direction: row;
+  width: 100%
+}
+
+.nav-link {
+  width: 30%;
+  flex-direction: row;
+  margin: 0;
 }

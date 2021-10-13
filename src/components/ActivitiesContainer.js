@@ -24,6 +24,7 @@ function ActivitiesContainer(){
        return activities.map((activity) => (
         <ActivityCard key={activity.id}
           activity = {activity}
+          name = {activity.activity_name}
           deleteActivity={deleteActivity} 
           updateActivity={updateActivity}
           />
@@ -80,6 +81,7 @@ function ActivitiesContainer(){
 
     return(
         <div className = 'activities-board-container'>
+          <h3>All Activities</h3>
             <div className = 'activities-card-container'>
                     { activities && populateActivities()}
                 </div>

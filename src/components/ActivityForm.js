@@ -1,6 +1,6 @@
 import React, {useState} from 'react' 
 
-function EventForm({activities, createActivity}){
+function ActivityForm({ createActivity}){
 
     const [newActivity, setNewActivity] = useState({
         activity_name:  "",  
@@ -40,4 +40,4 @@ function EventForm({activities, createActivity}){
     )
 }
 
-export default EventForm;
+export default ActivityForm;
