@@ -5,8 +5,8 @@ import EventCard from './EventCard'
 
 function EventContainer(){
 
-
     const [events, setEvents] = useState([])
+    
 
     useEffect(() =>{
         fetch(BASE_URL + 'events')
@@ -22,10 +22,44 @@ function EventContainer(){
             event_name = {event.event_name}
             date = {event.posting_date}
             location = {event.location}
+            updateEvent = {updateEvent}
+            deleteEvent = {deleteEvent}
             />
         ));
 
 }
+
+ //  UPDATE Event
+         
+ function updateEvent(event) {
+    fetch(BASE_URL + "events/" + event.id, {
+        method: "PUT",
+        body: JSON.stringify(event),
+        headers: {
+       "Accept": "applicaton/json",
+       "Content-Type": "application/json",
+       },
+    });
+  
+  const newEvents = events.map ((eve) => {
+    if (eve.id === event.id) {
+        eve = event;
+    }
+    
+    return eve;
+});
+setEvents(newEvents);
+}
+
+  // DELETE Event
+
+  function deleteEvent(event) {
+    fetch(BASE_URL + "events/" + event.id, {
+      method: "DELETE",
+    });
+    const newEvents = events.filter((eve) => eve.id !== events.id);
+    setEvents(newEvents);
+  }
 
     return (
             
@@ -38,4 +72,4 @@ function EventContainer(){
     )
 }
 
-export default EventContainer
+export default EventContainer;
