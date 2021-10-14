@@ -1,5 +1,6 @@
 import React from "react"
 import {Link} from 'react-router-dom'
+import Header from "./Header";
 
 
 function Home(){
@@ -14,6 +15,7 @@ function Home(){
            <header className="App-header">
                 <h1 className="display-4">Welcome to the Discovery App!</h1>
                 <p className="lead">Use your online life to live life offline.</p>
+                <Header />
             </header>
             Are you a member? 
             Login <Link to = {`/login`}> Here.</Link><br />

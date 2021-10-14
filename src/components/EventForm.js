@@ -54,7 +54,7 @@ function EventForm({createEvent}){
                     <br />
                 <input type ="submit" 
                     name ="submit" 
-                    value="Submit New event" 
+                    value="Submit New Event" 
                     className="submit" />
             </form>
         </div>

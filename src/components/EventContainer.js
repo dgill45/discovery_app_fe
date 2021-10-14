@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { BASE_URL } from '../constraints'
 import EventCard from './EventCard'
+import EventForm from './EventForm'
 
 
 function EventContainer(){
 
     const [events, setEvents] = useState([])
-    
+    const [showEventForm, setShowEventForm] = useState(false)
+
 
     useEffect(() =>{
         fetch(BASE_URL + 'events')
@@ -28,38 +30,41 @@ function EventContainer(){
         ));
 
 }
+    function handleClick() {
+        setShowEventForm((showEventForm) => !showEventForm)
+    }
 
  //  UPDATE Event
          
- function updateEvent(event) {
-    fetch(BASE_URL + "events/" + event.id, {
-        method: "PUT",
-        body: JSON.stringify(event),
-        headers: {
-       "Accept": "applicaton/json",
-       "Content-Type": "application/json",
-       },
-    });
+    function updateEvent(event) {
+        fetch(BASE_URL + "events/" + event.id, {
+            method: "PUT",
+            body: JSON.stringify(event),
+            headers: {
+        "Accept": "applicaton/json",
+        "Content-Type": "application/json",
+        },
+        });
   
-  const newEvents = events.map ((eve) => {
-    if (eve.id === event.id) {
-        eve = event;
-    }
-    
-    return eve;
-});
-setEvents(newEvents);
-}
+        const newEvents = events.map ((eve) => {
+            if (eve.id === event.id) {
+                eve = event;
+            }
+            
+            return eve;
+        });
+        setEvents(newEvents);
+        }
 
   // DELETE Event
 
-  function deleteEvent(event) {
-    fetch(BASE_URL + "events/" + event.id, {
-      method: "DELETE",
-    });
-    const newEvents = events.filter((eve) => eve.id !== events.id);
-    setEvents(newEvents);
-  }
+    function deleteEvent(event) {
+        fetch(BASE_URL + "events/" + event.id, {
+        method: "DELETE",
+        });
+        const newEvents = events.filter((eve) => eve.id !== events.id);
+        setEvents(newEvents);
+    }
 
     return (
             
@@ -67,6 +72,15 @@ setEvents(newEvents);
             <h3>All Events</h3>
             <div className = 'card-container'>
                  { events && populateEvents()}
+                 <div className = 'event-form-container'>
+                    {showEventForm ? <EventForm 
+                    createEvent={createEvent}/> : null}
+                    <div className="button-container">
+                        <button onClick={handleClick}>{showEventForm?
+                          "Hide new Event form":"Add a new Event" }
+                        </button>
+                      </div>
+                  </div>    
             </div>
         </div>
     )
