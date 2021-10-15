@@ -39,7 +39,7 @@ body {
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
-  width: 10rem;
+  width: 12rem;
   height: 20rem;
   display: inline-grid;
   margin: 1rem 2rem;
@@ -48,7 +48,7 @@ body {
 
 .card-container {
 
-  width: 50em;
+  width: 100%vw;
   height: 18rem;
   padding: 20px;
   justify-content: center;
@@ -81,15 +81,16 @@ a {
 
 nav.navbar {
   width: 100%;
-  background-color: slateblue;
+  background-color: saddlebrown;
+  display: flex;
 }
 
 .navbar-container{
   width: 100%;
-  display: flex;
+  
   justify-content: center;
   padding: 10px;
-  margin: auto 10px;
+  margin: auto ;
 }
 
 .nav-link-container{

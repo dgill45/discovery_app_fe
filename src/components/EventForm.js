@@ -28,25 +28,25 @@ function EventForm({createEvent}){
         <div className = "form container">
             <form onSubmit={handleSubmit} className ="form">
                 <input type ="text" 
-                    name = "name" 
+                    name = "event_name" 
                     onChange = {handleChange} 
                     value ={newEvent.event_name} 
                     placeholder="Name of new event"/>
                     <br />
                 <input type ="text" 
-                    date = "posting_date" 
+                    name = "posting_date" 
                     onChange = {handleChange} 
                     value ={newEvent.posting_date} 
                     placeholder="date of posted event"/>
                     <br />
                 <input type ="text" 
-                    location = "location" 
+                    name = "location" 
                     onChange = {handleChange} 
                     value ={newEvent.location} 
                     placeholder= "Where is this event happening?"/>
                     <br />
                 <input type ="textarea" 
-                    desc = "description" 
+                    name = "desc" 
                     onChange = {handleChange} 
                     value ={newEvent.desc} 
                     placeholder="Brief description of your event"/>

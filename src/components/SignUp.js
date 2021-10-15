@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 
 
 function SignUp({ onLogin }) {
-    /*const [user, setUser] = useState({
+    const [user, setUser] = useState({
         firstname: "",
         lastname: ""
-    })*/
+    })
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -45,20 +45,20 @@ function SignUp({ onLogin }) {
     return (
         <div className = "signup-form">
             <form className = "signup-form" onSubmit={handleSubmit}>
-                {/*<label htmlFor="First Name">First Name</label>
+                <label htmlFor="First Name">First Name</label>
                 <input
                 type="text"
                 id="firstname"
-                value={firstname}
+                value={user.firstname}
                 onChange={(e) => setUser(e.target.value)}
                 />
                 <label htmlFor="Last Name">Password:</label>
                 <input
                 type="text"
                 id="lastname"
-                value={lastname}
+                value={user.lastname}
                 onChange={(e) => setUser(e.target.value)}
-                />*/}
+                />
                 <label htmlFor="username">Username:</label>
                 <input
                 type="text"

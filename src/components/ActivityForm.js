@@ -26,7 +26,7 @@ function ActivityForm({ createActivity}){
             <form onSubmit={handleSubmit} className ="form">
                 <h3>Add a new Activity</h3>
                 <input type ="text" 
-                    name = "name" 
+                    name = "activity_name" 
                     onChange = {handleChange} 
                     value ={newActivity.activity_name} 
                     placeholder="Name of new activity"/>
