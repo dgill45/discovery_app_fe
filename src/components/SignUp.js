@@ -10,21 +10,6 @@ function SignUp({ onLogin }) {
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
-
-    /*function createUser(users) {
-        fetch(BASE_URL + "users", {
-          method: "POST",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => res.json())
-          .then((json) => setUser([...users, json]))
-
-    }*/
-  
     function handleSubmit(e) {
       e.preventDefault();
       fetch("/signup", {
@@ -43,22 +28,24 @@ function SignUp({ onLogin }) {
     }
   
     return (
-        <div className = "signup-form">
+        <div className ="form-box">
             <form className = "signup-form" onSubmit={handleSubmit}>
-                <label htmlFor="First Name">First Name</label>
+                <label htmlFor="First Name">First Name:</label>
                 <input
                 type="text"
-                id="firstname"
+                name="firstname" 
                 value={user.firstname}
                 onChange={(e) => setUser(e.target.value)}
                 />
-                <label htmlFor="Last Name">Password:</label>
+                <br/>
+                <label htmlFor="Last Name">Last Name:</label>
                 <input
                 type="text"
-                id="lastname"
+                name ="lastname"
                 value={user.lastname}
                 onChange={(e) => setUser(e.target.value)}
                 />
+                <br/>
                 <label htmlFor="username">Username:</label>
                 <input
                 type="text"

@@ -20,7 +20,7 @@ function EventForm({createEvent}){
 
       function handleSubmit(event) {
         event.preventDefault();
-        createEvent(newEvent)
+        setNewEvent(newEvent)
       }
 
 

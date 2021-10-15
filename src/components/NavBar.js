@@ -1,6 +1,5 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
-import Header from './Header';
 
 function NavBar(){
 
@@ -32,7 +31,6 @@ function NavBar(){
                     <div className = 'nav-link'>
                         <NavLink to = "/events">Events</NavLink>
                     </div>
-                    <Header />
                 </div>
             </nav>
        </div>
