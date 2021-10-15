@@ -68,6 +68,7 @@ function ActivitiesContainer(){
             return act;
         });
         setActivities(newActivities);
+        alert("Activity updated")
     }
 
     //DESTROY an activity
@@ -77,7 +78,7 @@ function ActivitiesContainer(){
         });
         const newActivities = activities.filter((act) => act.id !== activity.id);
         setActivities(newActivities);
-        alert("You have successfully deleted yourself!")
+        alert("You have successfully deleted the activity!")
       }
 
     return(

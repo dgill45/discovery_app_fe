@@ -29,6 +29,7 @@ function SignUp({ onLogin }) {
   
     return (
         <div className ="form-box">
+            <h3>Explore Your World, Become a Discoverer today!</h3>
             <form className = "signup-form" onSubmit={handleSubmit}>
                 <label htmlFor="First Name">First Name:</label>
                 <input

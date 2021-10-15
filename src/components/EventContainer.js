@@ -55,7 +55,9 @@ function EventContainer({createEvent}){
             return eve;
         });
         setEvents(newEvents);
+        alert("Event updated!")
         }
+        
 
   // DELETE Event
 
@@ -65,6 +67,7 @@ function EventContainer({createEvent}){
         });
         const newEvents = events.filter((eve) => eve.id !== events.id);
         setEvents(newEvents);
+        alert("You have successfully deleted the Event!")
     }
 
     return (

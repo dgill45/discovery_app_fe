@@ -6,6 +6,8 @@ import EventForm from "./EventForm.js";
 function ActivityDetails(){
 
     const [activity, setActivity] = useState(null)
+    const [showForm, setShowForm] = useState(false)
+
     const {id} = useParams()
     console.log(id)
 
@@ -41,6 +43,9 @@ function ActivityDetails(){
         });
     }
 
+    function handleClick() {
+        setShowForm((showForm) => !showForm)
+      }
 
 
     return(
@@ -53,11 +58,14 @@ function ActivityDetails(){
                             <h3>Add an Event</h3>
                     </div>
 
-
-
-                    <div className ='event-form'>
-                        <EventForm  createEvent = {createEvent}/>
-
+                    <div className = "event-form-container">
+                    {showForm ? <EventForm 
+                    createEvent={createEvent}/> : null}
+                        <div className="button-container">
+                            <button onClick={handleClick}>{showForm?
+                            "Hide new Event form":"Add a new Event" }
+                            </button>
+                        </div>
                     </div>
                 </div>
                 

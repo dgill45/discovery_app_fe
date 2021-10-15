@@ -115,13 +115,12 @@ nav.navbar {
 
 .nav-link {
   width: auto;
-  flex-direction: row;
   align-items: center;
   margin: 0;
 }
 
 .form-box {
-  width: 560px;
+  width: 100%vw;
 }
 
 .signup-form {

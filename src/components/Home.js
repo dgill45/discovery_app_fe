@@ -20,6 +20,13 @@ function Home(){
             Not a member?  Become a Discoverer! <strong>Sign Up<Link to = {'/signup'} > Here.</Link></strong>
 
 
+            <p>The Discover App is a new way to make friends, <br/>
+                explore interests and try new things.<br/>
+                Discoverer's coordinate events with like-minded <br/>
+                people in a myriad number of events.<br/>
+                Rediscover your pre-pandemic life with us!
+
+            </p>
         </div>
     )
 }
