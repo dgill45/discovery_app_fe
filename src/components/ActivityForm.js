@@ -23,7 +23,7 @@ function ActivityForm({ createActivity}){
 
     return(
         <div className = "form container">
-            <form onSubmit={handleSubmit} className ="add-activity">
+            <form onSubmit={handleSubmit} className ="form">
                 <h3>Add a new Activity</h3>
                 <input type ="text" 
                     name = "name" 

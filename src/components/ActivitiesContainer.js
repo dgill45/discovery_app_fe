@@ -77,6 +77,7 @@ function ActivitiesContainer(){
         });
         const newActivities = activities.filter((act) => act.id !== activity.id);
         setActivities(newActivities);
+        alert("You have successfully deleted yourself!")
       }
 
     return(

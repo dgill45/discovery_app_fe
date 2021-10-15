@@ -4,12 +4,13 @@ import EventCard from './EventCard'
 import EventForm from './EventForm'
 
 
-function EventContainer(){
+function EventContainer({createEvent}){
 
     const [events, setEvents] = useState([])
     const [showEventForm, setShowEventForm] = useState(false)
 
 
+    //Index(Read) Events
     useEffect(() =>{
         fetch(BASE_URL + 'events')
         .then((res) => res.json())

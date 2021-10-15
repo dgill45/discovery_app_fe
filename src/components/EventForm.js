@@ -26,8 +26,7 @@ function EventForm({createEvent}){
 
     return(
         <div className = "form container">
-            <form onSubmit={handleSubmit} className ="add-event">
-                <h3>Add a new Event</h3>
+            <form onSubmit={handleSubmit} className ="form">
                 <input type ="text" 
                     name = "name" 
                     onChange = {handleChange} 

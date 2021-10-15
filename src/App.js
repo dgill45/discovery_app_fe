@@ -7,6 +7,7 @@ import ActivityDetails from './components/ActivityDetails';
 import EventContainer from './components/EventContainer';
 import NavBar from './components/NavBar'
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 function App() {
 
@@ -22,6 +23,9 @@ function App() {
               </Route>
               <Route path= "/login">
                 <Login />
+              </Route>
+              <Route path= "/signup">
+                <SignUp />
               </Route>
               <Route path = '/activities/:id'>
                 <ActivityDetails />
